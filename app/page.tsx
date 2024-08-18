@@ -1,12 +1,20 @@
+/* eslint-disable @next/next/no-img-element */
+"use client";
+import Slider from "../components/Slider";
+import Header from "@/components/Header";
+
 export default function Home() {
   return (
-    <main className="flex items-center justify-center">
+    <>
+      <Header />
+      <main>
         <div
-          className="bg-cover bg-slate-400 bg-center w-full h-full flex justify-center items-center min-h-screen min-w-screen"
-          style={{ backgroundImage: "url('porx-bg.png')" }}
+          className=" p-4 lg:pr-[120px] bg-left-bottom bg-no-repeat w-full flex justify-center lg:justify-end items-start lg:items-center"
+          style={{ backgroundImage: "url('background.png')"}}
         >
-          <h1 className="text-center font-bold text-[50px] lg:text-[100px]">Próximamente</h1>
+            <Slider />
         </div>
-    </main>
+      </main>
+    </>
   );
 }
