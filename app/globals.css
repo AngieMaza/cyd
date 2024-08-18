@@ -3,19 +3,147 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: rgb(51, 205, 236);
+  --background-end-rgb: rgb(146, 32, 123);
+  --tw-gradient-direction: 180deg;
+  --primary-color: rgb(251 146 60);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+header{
+  @apply bg-gray-200 flex items-center justify-between border-b-2 border-orange-400 h-[100px] px-4 lg:px-[80px];
+}
+
+main {
+  background-color: white;
+  display: flex;
+  height: calc(100vh - 100px);
+}
+
+.gradient {
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+}
+
+.slider {
+  width: 100%;
+}
+
+@media screen and (min-width: 1025px) {
+  .slider {
+    width: 60%;
   }
 }
 
+.slider__button {
+  position: absolute;
+  top: 50%;
+  color: white;
+  font-weight: bold;
+  background-color: var(--primary-color);
+}
+.navbar-logo img {
+  width: 200px;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.toggle-line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--background-end-rgb);
+  margin: 4px;
+}
+
+/* Estilos del navbar */
+.navbar__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar__item {
+  margin-right: 100px;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+
+.navbar__link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: var(--background-end-rgb);
+  transition: width .3s;
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+.navbar__link:visited {
+  color: black;
+}
+
+/* Estilos para el sidebar en pantallas pequeñas */
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgb(229 231 235);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar--open {
+  transform: translateX(0);
+}
+
+.sidebar__list {
+  list-style: none;
+  padding: 1rem;
+}
+
+.sidebar__item {
+  margin: 1rem;
+}
+
+.sidebar__link {
+  text-decoration: none;
+  color: #333;
+  font-size: large;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  .navbar__list {
+      display: none;
+  }
+
+  .navbar-toggle {
+      display: flex;
+  }
+
+  .sidebar {
+      display: block;
+  }
+}
 
 @layer utilities {
   .text-balance {

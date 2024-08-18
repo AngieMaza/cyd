@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  weight: ["400","500","600","700","800"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Pintureria CYD",
-  description: "Pagina de inicio de Pintureria CYD",
+  description: "Pintureria CYD",
   keywords: [
     "Pintureria CYD",
     "Accesorios de pintura",
@@ -59,6 +62,7 @@ export const metadata: Metadata = {
     "Pinturas económicas",
     "Pinturas premium",
   ],
+  
 };
 
 export default function RootLayout({
@@ -68,7 +72,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.className}>
+        {children}
+      </body>
     </html>
   );
 }
