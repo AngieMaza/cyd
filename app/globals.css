@@ -10,7 +10,7 @@
 }
 
 header{
-  @apply bg-gray-200 flex items-center justify-between border-b-2 border-orange-400 h-[100px] px-[80px];
+  @apply bg-gray-200 flex items-center justify-between border-b-2 border-orange-400 h-[100px] px-4 lg:px-[80px];
 }
 
 main {
@@ -28,7 +28,13 @@ main {
 }
 
 .slider {
-  width: 60%;
+  width: 100%;
+}
+
+@media screen and (min-width: 1025px) {
+  .slider {
+    width: 60%;
+  }
 }
 
 .slider__button {
@@ -96,8 +102,9 @@ main {
   position: fixed;
   top: 0;
   right: 0;
-  width: 250px;
+  width: 100%;
   height: 100%;
+  z-index: 100;
   background-color: rgb(229 231 235);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   transform: translateX(100%);
@@ -114,12 +121,13 @@ main {
 }
 
 .sidebar__item {
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
 .sidebar__link {
   text-decoration: none;
   color: #333;
+  font-size: large;
 }
 
 /* Estilos responsivos */

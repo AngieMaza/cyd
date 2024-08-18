@@ -33,7 +33,16 @@ const Navbar: React.FC = () => {
             </a>
           </li>
         </ul>
-        <div className={`sidebar ${isOpen ? "sidebar--open" : ""}`}>
+        <div
+          className={`sidebar bg-right-bottom bg-no-repeat ${isOpen ? "sidebar--open" : ""}`}
+          style={{ backgroundImage: "url('background3.png')" }}
+        >
+          <div className="flex items-center justify-between p-8">
+            <button className=" text-3xl" onClick={toggleMenu}>
+              x
+            </button>
+            <img src="logocyd.png" alt="logo" width={300} />
+          </div>
           <ul className="sidebar__list">
             <li className="sidebar__item">
               <a href="/" className="sidebar__link" onClick={toggleMenu}>

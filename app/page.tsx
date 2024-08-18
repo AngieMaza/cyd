@@ -9,10 +9,10 @@ export default function Home() {
       <Header />
       <main>
         <div
-          className=" pr-[120px] bg-left-bottom bg-no-repeat w-full flex justify-end items-center"
-          style={{ backgroundImage: "url('background.png')" }}
+          className=" p-4 lg:pr-[120px] bg-left-bottom bg-no-repeat w-full flex justify-center lg:justify-end items-start lg:items-center"
+          style={{ backgroundImage: "url('background.png')"}}
         >
-          <Slider />
+            <Slider />
         </div>
       </main>
     </>

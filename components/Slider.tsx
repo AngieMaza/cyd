@@ -27,13 +27,13 @@ const Slider = () => {
   }, [activeImage]);
 
   return (
-    <div className="slider relative w-full shadow-2xl rounded-2xl ">
-      <div className="w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500">
+    <div className="slider relative w-full shadow-2xl rounded-2xl overflow-hidden">
+      <div className="w-full flex justify-center items-center transition-transform ease-in-out duration-500">
         {images.map((image, indx) => {
           return (
             <div
               className={`${
-                indx === activeImage ? "block w-full h-[60vh] object-cover transition-all duration-500 ease-in-out" : "hidden"
+                indx === activeImage ? "block w-full h-[40vh] sm:h-[50vh] md:h-[60vh] object-cover transition-all duration-500 ease-in-out" : "hidden"
               }`}
               key={image.id}
             >
@@ -47,13 +47,13 @@ const Slider = () => {
         })}
       </div>
       <button
-        className="slider__button left-4 transform -translate-y-1/2 rounded-full p-2 w-10 h-10"
+        className="slider__button absolute left-4 top-1/2 transform -translate-y-1/2 rounded-full p-2 w-10 h-10 bg-white shadow-md focus:outline-none"
         onClick={prevImage}
       >
         {"<"}
       </button>
       <button
-        className="slider__button right-4 transform -translate-y-1/2 rounded-full p-2 w-10 h-10"
+        className="slider__button absolute right-4 top-1/2 transform -translate-y-1/2 rounded-full p-2 w-10 h-10 bg-white shadow-md focus:outline-none"
         onClick={nextImage}
       >
         {">"}
