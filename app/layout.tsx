@@ -9,7 +9,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Pintureria CYD",
-  description: "Pintureria CYD",
+  description: "Pintureria CYD es una tienda de pinturas y accesorios de pintura ubicada en Constituyentes 1911 (Pacheco - Buenos Aires). Ofrecemos una amplia gama de productos y asesoramiento en pinturas. Aceptamos tarjetas de crédito y débito con cuotas sin interés. Teléfono: 011 2504-9785. Punto de venta exclusivo de Einhell y KWB.",
   keywords: [
     "Pintureria CYD",
     "Accesorios de pintura",
